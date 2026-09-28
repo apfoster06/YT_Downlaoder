@@ -1,0 +1,38 @@
+# --- Bundled ffmpeg binaries -------------------------------------------------
+# ~227 MB each, well past GitHub's 100 MB per-file hard limit, so they are not
+# committed. See bin/README.md for how to put them back. Running from source
+# only needs ffmpeg on PATH; bin/ is required for the frozen build.
+bin/ffmpeg
+bin/ffmpeg.exe
+bin/ffprobe
+bin/ffprobe.exe
+
+# --- Python ------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# --- Output ------------------------------------------------------------------
+# Downloaded media is output, not source.
+downloads/
+
+# PyInstaller. build_exe.py writes to ~/yt_build (outside the repo) on purpose,
+# but catch the defaults in case anyone runs pyinstaller directly.
+build/
+dist/
+*.spec
+
+# --- Local tooling -----------------------------------------------------------
+# Machine-local Claude Code permission grants.
+.claude/settings.local.json
+
+# --- OS / editor -------------------------------------------------------------
+Thumbs.db
+desktop.ini
+.DS_Store
+*.swp
+.idea/
+.vscode/
